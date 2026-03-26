@@ -1,5 +1,4 @@
  ## Users
-
 | Attribute | Data Type | Description | Contraints |
 |---|---|---|---|
 | userId | serial | ตัวเลขที่ระบุผู้ใช้ โดยที่แต่ละผู้ใช้จะไม่ซ้ำกัน | Primary Key |
@@ -26,3 +25,26 @@
 | Children | เด็ก |
 | Adult | ผู้ใหญ่ |
 | Senior | ผู้สูงวัย |
+
+## Bookings
+| Attribute | Data Type | Description | Contraints |
+|---|---|---|---|
+| bookingId | serial | ตัวเลขที่ระบุการจอง โดยที่แต่ละการจองไม่ซ้ำกัน | Primary Key | 
+| userId | integer | userId ของผู้ใช้ที่ทำการจอง | Foreign Key, Not Null |
+| ticket | TicketType | ประเภทของตั๋ว | Not Null |
+| amount | integer | จำนวนตั๋วที่ผู้ใช้ต้องการ | Not Null |
+| rideId | integer | rideId ของเครื่องเล่นที่ถูกจอง | Foreign Key, Not Null |
+| isFastPass | boolen | ค่าความจริงบอกว่าผู้ใช้ต้องการ fastpass หรือไม่ โดยที่ true คือ ผู้ใช้ต้องการ fastpass และ false คือ ผู้ใช้ไม่ต้องการ fastpass | Not Null |
+| bookingDate | timestamp | วัน/เดือน/ปี ที่ผู้ใช้ต้องการจอง(วันที่ต้องการเข้าไปเล่น) | Not Null |
+| payment | boolen | ราคาของการจองนี้ | Not Null |
+| createdAt | timestamp |  วัน/เดือน/ปี ที่สร้างการจองนี้ | Default current_timestamp |
+| updateAt | timestamp |  วัน/เดือน/ปี ที่แก้ไขการจองนี้ | Default current_timestamp |
+
+## Discounts
+| Attribute | Data Type | Description | Contraints |
+|---|---|---|---|
+| discountId | serial | ตัวเลขที่ระบุโค้ดลดราคา โดยที่แต่ละโค้ดไม่ซ้ำกัน | Primary Key |
+| code | varcha (30) | โค้ดลดราคา | Not Null |
+| priceDiscount | integer | จำนวนราคาที่ส่วนลดลดไป | Not Null |
+| usagelimmit | integer | จำนวนครั้งที่มากที่สุดที่สามารถใช้ส่วนลดนี้ได้ | Not Null |
+| usedCount | integer | จำนวนครั้งที่ส่วนลดนี้ถูกใช้ไปแล้ว | Not Null |
