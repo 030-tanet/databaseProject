@@ -48,5 +48,6 @@
 | discountId | serial | ตัวเลขที่ระบุโค้ดลดราคา โดยที่แต่ละโค้ดไม่ซ้ำกัน | Primary Key |
 | code | varcha (30) | โค้ดลดราคา | Not Null |
 | priceDiscount | integer | จำนวนราคาที่ส่วนลดลดไป | Not Null |
+| minPrice | integer | ราคาขั้นต่ำที่สามารถใช้ส่วนลดได้ | Not Null |
 | usagelimmit | integer | จำนวนครั้งที่มากที่สุดที่สามารถใช้ส่วนลดนี้ได้ | Not Null |
 | usedCount | integer | จำนวนครั้งที่ส่วนลดนี้ถูกใช้ไปแล้ว | Not Null |
