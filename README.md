@@ -37,7 +37,7 @@
 | rideId | integer | rideId ของเครื่องเล่นที่ถูกจอง | Foreign Key, Not Null |
 | isFastPass | boolen | ค่าความจริงบอกว่าผู้ใช้ต้องการ fastpass หรือไม่ โดยที่ true คือ ผู้ใช้ต้องการ fastpass และ false คือ ผู้ใช้ไม่ต้องการ fastpass | Not Null |
 | bookingDate | timestamp | วัน/เดือน/ปี ที่ผู้ใช้ต้องการจอง(วันที่ต้องการเข้าไปเล่น) | Not Null |
-| discountId | integer | discountId ของโค้ดลดราคา | Foreign Key, Not Null |
+| discountId | integer | discountId ของโค้ดลดราคา | Foreign Key, Null|
 | payment | boolen | ราคาของการจองนี้ | Not Null |
 | createdAt | timestamp |  วัน/เดือน/ปี ที่สร้างการจองนี้ | Default current_timestamp |
 | updateAt | timestamp |  วัน/เดือน/ปี ที่แก้ไขการจองนี้ | Default current_timestamp |
