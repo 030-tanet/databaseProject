@@ -20,20 +20,14 @@
 | image | varchar (255) | Path ของรูปภาพ  | Not Null |
 | shortDes | varchar(255)[] | list ของคำอธิบายสั้นๆ ของเครื่องเล่น | Not Null |
 
-## TicketType
-| Attribute | Description |
-|---|---|
-| Children | เด็ก |
-| Adult | ผู้ใหญ่ |
-| Senior | ผู้สูงวัย |
-
 ## Bookings
 | Attribute | Data Type | Description | Contraints |
 |---|---|---|---|
-| bookingId | serial | ตัวเลขที่ระบุการจอง โดยที่แต่ละการจองไม่ซ้ำกัน | Primary Key | 
+| bookingId | serial | ตัวเลขที่ระบุการจอง โดยที่แต่ละการจองไม่ซ้ำกัน  | Primary Key | 
 | userId | integer | userId ของผู้ใช้ที่ทำการจอง | Foreign Key, Not Null |
-| ticket | TicketType | ประเภทของตั๋ว | Not Null |
-| amount | integer | จำนวนตั๋วที่ผู้ใช้ต้องการ | Not Null |
+| amountChildren | integer | จำนวนตั๋วของเด็ก | Not Null |
+| amountAdult | integer | จำนวนตั๋วของผู้ใหญ่ | Not Null |
+| amountSenior | integer | จำนวนตั๋วของผู้สูง | Not Null |
 | rideId | integer | rideId ของเครื่องเล่นที่ถูกจอง | Foreign Key, Not Null |
 | isFastPass | boolen | ค่าความจริงบอกว่าผู้ใช้ต้องการ fastpass หรือไม่ โดยที่ true คือ ผู้ใช้ต้องการ fastpass และ false คือ ผู้ใช้ไม่ต้องการ fastpass | Not Null |
 | bookingDate | timestamp | วัน/เดือน/ปี ที่ผู้ใช้ต้องการจอง(วันที่ต้องการเข้าไปเล่น) | Not Null |
