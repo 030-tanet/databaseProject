@@ -48,7 +48,7 @@
 |---|---|---|---|
 | discountId | serial | ตัวเลขที่ระบุโค้ดลดราคา โดยที่แต่ละโค้ดไม่ซ้ำกัน (ระบบสร้างดึง) | Primary Key |
 | code | varcha (30) | โค้ดลดราคา (ระบบสร้างเอง) | Not Null |
-| priceDiscount | integer | จำนวนราคาที่ส่วนลดลดไป (ระบบบดึงมา) | Not Null |
+| percentDiscount | decimal(3, 2) | เปอร์เซ็นต์ส่วนลด (ระบบบดึงมา) | Not Null |
 | minPrice | integer | ราคาขั้นต่ำที่สามารถใช้ส่วนลดได้ (ระบบสร้างเอง) | Not Null |
 | usagelimit | integer | จำนวนครั้งที่มากที่สุดที่สามารถใช้ส่วนลดนี้ได้ (ระบบสร้างเอง) | Not Null |
 | usedCount | integer | จำนวนครั้งที่ส่วนลดนี้ถูกใช้ไปแล้ว (ระบบสร้างเอง) | Not Null |
